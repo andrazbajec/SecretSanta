@@ -8,7 +8,7 @@ switch ($requestMethod) {
     case 'GET':
         switch ($request) {
             case '/' :
-                require __DIR__ . '/views/home.php';
+                require __DIR__ . '/views/home.phtml';
                 break;
             default:
                 http_response_code(404);
