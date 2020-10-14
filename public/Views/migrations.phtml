@@ -1,0 +1,25 @@
+<?php
+
+use Controllers\Migrations;
+
+$migrationsController = new Migrations();
+$migrations = $migrationsController->migrations;
+$counter = 0;
+?>
+<div class="migrations-container">
+    <table>
+        <?php foreach ($migrations as $migration): ?>
+            <tr data-action="migration-container" data-id="<?= $counter; ?>">
+                <td>
+                    <?= $migration['Description']; ?>
+                </td><td>
+                    <input data-action="migration-checkbox" type="checkbox" disabled>
+                </td><td>
+                    <a class="btn btn-success" data-action="execute-migration" data-type="up" data-id="<?= $counter; ?>">Migration up</a>
+                </td><td>
+                    <a class="btn btn-danger" data-action="execute-migration" data-type="down" data-id="<?= $counter++; ?>">Migration down</a>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+</div>

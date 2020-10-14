@@ -1,0 +1,10 @@
+{
+  "name": "vagrant/public",
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "Controllers\\": "Controllers",
+      "Required\\": "Required"
+    }
+  }
+}
